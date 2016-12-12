@@ -330,5 +330,111 @@ public class TareaGestionCalidadvFinal {
         }
     }
         
+        public static void primerov2(){
+        Scanner ingreso = new Scanner(System.in);
+        double ladoA=0, ladoB=0, ladoC=0, areaU, semip=0, areaR, porcentajeEstimado, error;
+        int porcentajeTotal = 100;
+        int bandera =0;
+        while(bandera==0){
+            System.out.println("Ingrese el primer lado:");
+            ladoA = ingreso.nextDouble();
+            System.out.println("Ingrese el segundo lado:");
+            ladoB = ingreso.nextDouble();
+            System.out.println("Ingrese el tercer lado:");
+            ladoC = ingreso.nextDouble();
+            if (((ladoA+ladoB)>ladoC)&&((ladoA+ladoC)>ladoB)&&((ladoB+ladoC)>ladoA)) {
+                bandera = 1;
+            }else{
+                System.out.println("Estos lados no forman un triángulo, ingrese sus lados nuevamente");
+            }
+        }
+        System.out.println("Ingrese su el área de su triángulo");
+        areaU=ingreso.nextDouble();
+        try{
+            semip=(ladoA+ladoB+ladoC)/2;
+            areaR=Math.sqrt(semip*(semip-ladoA)*(semip-ladoB)*(semip-ladoC));
+            porcentajeEstimado = (areaU*porcentajeTotal)/areaR;
+            error = porcentajeTotal - porcentajeEstimado;
+            if (error < 0) {
+                error = error*(-1);
+            }
+            if (error <=5 && error>=0) {
+                System.out.println("Usted es una calculadora!!");
+            }else{
+                if ((error > 5)&&(error < 20)) {
+                    System.out.println("Bien, bien, no muy bien pero bien");
+                }else{
+                    if (error > 25) {
+                        System.out.println("sería bueno hacer más cálculos mentales");
+                    }else{
+                        System.out.println("Su porcentaje de error es de: "+error+"%");
+                    }
+                }
+            }
+        }catch(Exception e){
+            System.out.println("Error "+e);
+        }
+    }
+    
+    public static void tercerov2(){
+        Scanner ingreso = new Scanner(System.in);
+        int valora=0, valorb=0, bandera=0, contador = 1, acumulador=0;
+        System.out.println("Ingrese el valor de A");
+        valora= ingreso.nextInt();
+        while(valora>=valorb){    
+            System.out.println("Ingrese el valor de B");
+            valorb = ingreso.nextInt();
+            if (valora>=valorb) {
+                System.out.println("Ingrese un valor mayor al valor de A");
+            }
+        }
+        System.out.println("Los multiplos de A menores que B son: ");
+        while(bandera == 0){
+            acumulador = valora*contador;
+            System.out.println(acumulador);
+            contador++;
+            if ((valora*contador)>=valorb) {
+                bandera=1;
+            }
+        }
+    }
+    
+    public static void quintov2(){
+        Scanner ingreso = new Scanner(System.in);
+        int numero=0,suma=0, segundodigito,tercerdigito;
+        String cadena;
+        while(numero<10 || numero>1000){
+            System.out.println("Ingrese su valor:");
+            numero=ingreso.nextInt();
+        }
+        try{
+        cadena = Integer.toString(numero);
+        if (cadena.length()==2) {
+            String cadena2 = Integer.toString(numero);
+            cadena2 = cadena2.substring(1);
+            System.out.println(cadena2);
+            segundodigito = Integer.parseInt(cadena2);
+            suma=Integer.parseInt(cadena.substring(0,1))+segundodigito;
+        }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        try{
+        cadena = Integer.toString(numero);
+        if (cadena.length()==3) {
+            String cadena2 = Integer.toString(numero);
+            cadena2 = cadena2.substring(1);
+            String cadena3 = cadena2.substring(0,1);
+            cadena2 = cadena2.substring(1);
+            segundodigito = Integer.parseInt(cadena2);
+            tercerdigito = Integer.parseInt(cadena3);
+            suma=Integer.parseInt(cadena.substring(0,1))+segundodigito+tercerdigito;
+        }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        System.out.println("Suma "+suma);
+    }
+        
 }
   
