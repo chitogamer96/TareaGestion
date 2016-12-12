@@ -552,7 +552,32 @@ public class TareaGestionCalidadvFinal {
             return false;
         }        
     }
+    public static void septimo(){
+        int bandera=0;
+        double cociente=0;
+        int  numeroCifras=0,multiplicador = 5;
+        while(bandera==0){
+            String cadena = String.valueOf(multiplicador);
+            numeroCifras = cadena.length();
+            cociente = ((Math.pow(multiplicador, 2))-multiplicador)/(Math.pow(10, numeroCifras));
+            if (esEntero(cociente)) {
+                System.out.println(multiplicador);
+            }
+            multiplicador++;
+            if ((((Math.pow(multiplicador, 2))-multiplicador)/(Math.pow(10, numeroCifras)))>1000) {
+                bandera=1;
+            }
+        }
+    }
     
+    public static boolean esEntero(double numero){
+        if (numero % 1 == 0) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
         
       
 }
