@@ -42,6 +42,7 @@ public class TareaGestionCalidadvFinal {
           Ejercicio5();
        break;
            case 7:
+          Ejercicio7();
        break;
            case 9:
           Ejercicio9();
@@ -56,6 +57,7 @@ public class TareaGestionCalidadvFinal {
           Ejercicio15();     
        break;
            case 17:
+          Ejercicio17();
        break;
            case 19:
            Ejercicio19();
@@ -208,6 +210,24 @@ public class TareaGestionCalidadvFinal {
         }
         System.out.println("Suma "+suma);
     }
+        public static void Ejercicio7(){
+        System.out.println("Algoritmo que determine los números automórficos menores que 1000. \nUn número se dice automórfico si su cuadrado termina en los mismos dígitos que el número original, por ejemplo 762 = 5776. ");
+        int bandera=0;
+        double cociente=0;
+        int  numeroCifras=0,multiplicador = 5;
+        while(bandera==0){
+            String cadena = String.valueOf(multiplicador);
+            numeroCifras = cadena.length();
+            cociente = ((Math.pow(multiplicador, 2))-multiplicador)/(Math.pow(10, numeroCifras));
+            if (esEntero(cociente)) {
+                System.out.println(multiplicador);
+            }
+            multiplicador++;
+            if ((((Math.pow(multiplicador, 2))-multiplicador)/(Math.pow(10, numeroCifras)))>1000) {
+                bandera=1;
+            }
+        }
+    }
         
     
      public static void  Ejercicio9()
@@ -293,6 +313,33 @@ public class TareaGestionCalidadvFinal {
         System.out.println(" EL total de "+valora+" multiplicado por "+valorb+" es = "+total);
         
           
+    }
+        public static void  Ejercicio17(){
+            System.out.println(" Haga un algoritmo  que reciba un valor n entero y …..  \n" +
+"\na) si n_0 calcule n! \nb) si n<0 escriba un mensaje de error y no calcule nada. ");
+        Scanner ingreso = new Scanner(System.in);
+        int numero=0, contador=0,bandera=0, total=1;
+        System.out.println("Ingrese su valor");
+        numero = ingreso.nextInt();
+        if (numero==0) {
+            total =1;
+            System.out.println(total);
+        }else{
+            if (numero>0) {
+                while(bandera==0){
+                    contador++;
+                    total = total*contador;
+                    if (contador==numero) {
+                        bandera=1;
+                    }            
+                }
+                System.out.println(total);
+            }else{
+                if (numero<0) {
+                    System.out.println("Error en procesar la información");
+                }
+            }
+        }
     }
     public static void Ejercicio19()
     {
@@ -652,23 +699,7 @@ public class TareaGestionCalidadvFinal {
             return false;
         }        
     }
-    public static void septimo(){
-        int bandera=0;
-        double cociente=0;
-        int  numeroCifras=0,multiplicador = 5;
-        while(bandera==0){
-            String cadena = String.valueOf(multiplicador);
-            numeroCifras = cadena.length();
-            cociente = ((Math.pow(multiplicador, 2))-multiplicador)/(Math.pow(10, numeroCifras));
-            if (esEntero(cociente)) {
-                System.out.println(multiplicador);
-            }
-            multiplicador++;
-            if ((((Math.pow(multiplicador, 2))-multiplicador)/(Math.pow(10, numeroCifras)))>1000) {
-                bandera=1;
-            }
-        }
-    }
+
     
     public static boolean esEntero(double numero){
         if (numero % 1 == 0) {
@@ -678,31 +709,7 @@ public class TareaGestionCalidadvFinal {
             return false;
         }
     }
-    public static void decimoSeptimo(){
-        Scanner ingreso = new Scanner(System.in);
-        int numero=0, contador=0,bandera=0, total=1;
-        System.out.println("Ingrese su valor");
-        numero = ingreso.nextInt();
-        if (numero==0) {
-            total =1;
-            System.out.println(total);
-        }else{
-            if (numero>0) {
-                while(bandera==0){
-                    contador++;
-                    total = total*contador;
-                    if (contador==numero) {
-                        bandera=1;
-                    }            
-                }
-                System.out.println(total);
-            }else{
-                if (numero<0) {
-                    System.out.println("Error en procesar la información");
-                }
-            }
-        }
-    }
+
         
       
 }
