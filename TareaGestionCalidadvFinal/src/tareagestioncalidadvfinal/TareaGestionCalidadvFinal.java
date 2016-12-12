@@ -70,6 +70,7 @@ public class TareaGestionCalidadvFinal {
            Ejercicio25();
        break;
            case 27:
+               Ejercicio27();
                //LLeva tiempo e investigar
        break;
            case 29:
@@ -383,6 +384,86 @@ public class TareaGestionCalidadvFinal {
         nino3= entrada1.nextInt();
         total=(nino1*6)+(nino2*3)+(nino3*2);
         System.out.println("El uso total de Pañales es de "+total+" Pañales");
+    }
+     public static void  Ejercicio27()
+    {
+        int personas,voto,part1=0,part2=0,part3=0,sivotan=0,novotan;
+        String partfav="";
+        double abstenciones,porcv1,porcv2,porcv3;
+        String resp;
+        Scanner entrada1=new Scanner(System.in);
+        System.out.println("Ingrese la cantidad de personas a votar");
+        personas= entrada1.nextInt();
+        for (int i = 1; i < personas; i++) {
+             System.out.println("VOTANTE #"+i);
+             System.out.println("Va a votar? \n1.-Si \n2.-No");
+             resp=entrada1.next();
+             if (resp.equals("1")||resp.equals("si")||resp.equals("SI")||resp.equals("Si")||resp.equals("sI")) 
+             {
+                 System.out.println("Por que Partido votara? \n1.- Partido 2\n2.- Partido 2\n3.- Partido 3");
+                 voto=entrada1.nextInt();
+                 while(voto>3&&voto<1)
+                 {
+                     System.out.println("Voto no valido, elija un numero de partido");
+                 }
+                 switch(voto)
+                 {
+                     case 1:
+                         part1++;
+                         break;
+                     case 2:
+                         part2++;
+                         break;
+                     case 3:
+                         part3++;
+                         break;
+                 }
+                 sivotan++;
+            }
+             
+        }
+        novotan=sivotan-personas;
+        abstenciones=(100*novotan)/personas;
+        porcv1=(100*part1)/sivotan;
+        porcv2=(100*part2)/sivotan;
+        porcv3=(100*part3)/sivotan;       
+        System.out.println("El "+abstenciones+"% de los Votantes decidieron no votar");
+        System.out.println("El partido 1 tiene el "+porcv1+"% de votos a favor");
+        System.out.println("El partido 2 tiene el "+porcv2+"% de votos a favor");
+        System.out.println("El partido 3 tiene el "+porcv3+"% de votos a favor");
+         if (part1>part2&&part1>part3) 
+        {
+         //partfav="1";   
+            System.out.println("El partido Favorito es el Partido Uno con un total de "+personas+"Votantes y  tiene un total"
+                    + "de votos de "+part1+" que corresponde al "+porcv1+"% a favor");
+        }else if (part2>part1&&part2>part3)
+        {
+         //partfav="2";
+             System.out.println("El partido Favorito es el Partido Dos con un total de "+personas+" Votantes tiene un total"
+                    + "de votos de "+part2+" que corresponde al "+porcv2+"% a favor");
+        }else if (part3>part1&&part3>part2) {
+             //partfav="3";
+              System.out.println("El partido Favorito es el Partido Tres con un total de "+personas+"Votantes  tiene un total"
+                    + "de votos de "+part3+" que corresponde al "+porcv3+"% a favor");
+        }else if (part1==part2&&part2==part3) {
+            //partfav="1,2,3";
+             System.out.println("Los tres Partidos empataron en votos con un total de "+part1);
+        }else if (part1==part2&&part2>part3) {
+          //  partfav="1,2";
+            System.out.println("El partido Uno y el partido Dos empataron en votos con un total de "+part1+" Por lo tanto son los favoritos");
+        }else if (part2==part3&&part3>part1) {
+          //  partfav="2,3";
+           System.out.println("El partido Dos y el partido Tres empataron en votos con un total de "+part2+" Por lo tanto"
+                   + " son los favoritos");
+      
+        }else if (part1==part3&&part3>part2) {
+            partfav="1,3";
+            System.out.println("El partido Uno y el partido Tres empataron en votos con un total de "+part3+" Por lo tanto"
+                   + " son los favoritos");
+                  
+        }
+        
+
     }
               public static void  Ejercicio29()
     {
