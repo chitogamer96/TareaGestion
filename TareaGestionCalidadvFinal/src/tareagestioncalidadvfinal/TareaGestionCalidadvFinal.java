@@ -40,6 +40,7 @@ public class TareaGestionCalidadvFinal {
            case 7:
        break;
            case 9:
+          Ejercicio9();
        break;
            case 11:
        break;
@@ -88,7 +89,30 @@ public class TareaGestionCalidadvFinal {
                
        }
     }
-    public static void Ejercicio21()
+
+    public static boolean EsPar(String va)
+    {
+      int hola=Integer.parseInt(va);
+      if(hola % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }        
+    }
+    
+     public static void  Ejercicio9()
+    {
+        int inicio=1,limite=1000;
+        for (int i = 0; i < 1000; i++) {
+            if (esPrimo(i)) {
+                System.out.println(","+i);
+                
+            }
+            
+        }
+      
+    }
+         public static void Ejercicio21()
     {
         String digito1,digito2,digito3;
          Scanner entrada=new Scanner(System.in);
@@ -108,26 +132,8 @@ public class TareaGestionCalidadvFinal {
         }else
         {
             System.out.println("Su Numero NO es  M-alternante");
-        }       
-        
-        
-        
-      //  System.out.println("digito#1 es   "+digito1+"digito#2 "+digito2+"digito#3 "+digito3);
-        
-      
-        
-        
+        }    
     }
-    public static boolean EsPar(String va)
-    {
-      int hola=Integer.parseInt(va);
-      if(hola % 2 == 0) {
-            return true;
-        } else {
-            return false;
-        }        
-    }
-    
     public static void  Ejercicio23()
     {
         double nota1,nota2;
