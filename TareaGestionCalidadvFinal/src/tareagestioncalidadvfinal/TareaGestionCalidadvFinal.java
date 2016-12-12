@@ -32,6 +32,7 @@ public class TareaGestionCalidadvFinal {
        switch(opcion)
        {
            case 1:
+
            Ejercicio1();
        break;
            case 3:
@@ -100,6 +101,7 @@ public class TareaGestionCalidadvFinal {
 
 
       public static void Ejercicio1(){
+        System.out.println("Ingresar los lados de un triángulo \n(validar que se forme un triángulo), luego pida al usuario (ingrese) cual sería el área de ese triángulo.\nMuestre en cuanto porcentaje se equivocó el usuario, si es menos del 5% imprima \"usted es una calculadora!!!\", si es entre 5% y 20%, imprima \"Bien, bien, no muy bien pero bien\", si supera el 25% imprima \"sería bueno hacer más cálculos mentales\". ");
         Scanner ingreso = new Scanner(System.in);
         double ladoA=0, ladoB=0, ladoC=0, areaU, semip=0, areaR, porcentajeEstimado, error;
         int porcentajeTotal = 100;
@@ -146,6 +148,7 @@ public class TareaGestionCalidadvFinal {
     }
     
     public static void Ejercicio3(){
+        System.out.println("Algoritmo que reciba como entrada dos valores: a y b, donde a < b. Este algoritmo debe generar como salida los múltiplos de A que son menores que B.");
         Scanner ingreso = new Scanner(System.in);
         int valora=0, valorb=0, bandera=0, contador = 1, acumulador=0;
         System.out.println("Ingrese el valor de A");
@@ -169,6 +172,7 @@ public class TareaGestionCalidadvFinal {
     }
     
     public static void Ejercicio5(){
+        System.out.println("Algoritmo que dado un número (>10 y < 1000)  calcula y muestra la suma de sus dígitos.");
         Scanner ingreso = new Scanner(System.in);
         int numero=0,suma=0, segundodigito,tercerdigito;
         String cadena;
@@ -208,7 +212,7 @@ public class TareaGestionCalidadvFinal {
     
      public static void  Ejercicio9()
     {
-   
+        System.out.println("Algoritmo que muestre cuales y cuantos son los números primos comprendidos entre 1 y 1000.");
         String ini="(1";
         for (int i = 2; i < 1000; i++) {
             if (esPrimo(i)) {
@@ -229,6 +233,7 @@ public class TareaGestionCalidadvFinal {
     }
           public static void  Ejercicio11()
     {
+        System.out.println("Algoritmo para calcular y visualizar la suma de números pares comprendidos entre 20 y N (ambos incluidos).");
         String ini="(";
    
          Scanner entrada1=new Scanner(System.in);  
@@ -255,8 +260,9 @@ public class TareaGestionCalidadvFinal {
              
          public static void Ejercicio13()
     {
-       int base,potencia,total=1;
-       Scanner entr=new Scanner(System.in);
+        System.out.println("Algoritmo que calcule mn  (n > 0 y entero) sin utilizar potencia.");
+        int base,potencia,total=1;
+        Scanner entr=new Scanner(System.in);
         System.out.println("Ingrese una base");
         base=entr.nextInt();
         System.out.println("Ingrese la potencia");
@@ -270,8 +276,9 @@ public class TareaGestionCalidadvFinal {
         
           
     }
-             public static void Ejercicio15()
+        public static void Ejercicio15()
     {
+        System.out.println(" Algoritmo que calcule m x n (m >= 0 , n>= 0, ambos enteros) sin utilizar la operación de multiplicación.");
        int valora,valorb,total=0;
        Scanner entr=new Scanner(System.in);
         System.out.println("Calcular m*n");
@@ -289,6 +296,7 @@ public class TareaGestionCalidadvFinal {
     }
     public static void Ejercicio19()
     {
+        System.out.println("Algoritmo que ingrese un entero positivo (no > 256). Calcular y mostrar su equivalente a binario.");
        int numero,exp,digito,bin;
        double binario;
        Scanner entr=new Scanner(System.in);
@@ -314,6 +322,8 @@ public class TareaGestionCalidadvFinal {
     }
          public static void Ejercicio21()
     {
+        System.out.println("Algoritmo que determine si un número (>=100 y < 1000) es o no M-alternante.  \nUn número entero positivo se dice M-alternante Si, el primer dígito es “par” entonces los \n" +
+         "2 dígitos siguientes deben ser impares.  \nSi, el primer dígito es “impar” entonces los 2 dígitos siguientes deben ser pares.");
         String digito1,digito2,digito3;
          Scanner entrada=new Scanner(System.in);
         System.out.println("Ingrese un numero de 3 cifras");
@@ -344,6 +354,7 @@ public class TareaGestionCalidadvFinal {
     }
     public static void  Ejercicio23()
     {
+        System.out.println("Determinar si un alumno aprueba o reprueba una asignatura en la carrera de ingeniería en sistema de la FACCI. \nIngresará sus dos calificaciones parciales");
         double nota1,nota2;
         Scanner entrada1=new Scanner(System.in);
         System.out.println("Determinar si aprueba o reprueba una Asignatura");
@@ -373,6 +384,7 @@ public class TareaGestionCalidadvFinal {
     }
        public static void  Ejercicio25()
     {
+        System.out.println("En una guardería hay  N niños de 1, 2 y 3 años. Los niños de 1 año consumen 6 pañales al día, los niños de 2 años consumen 3 pañales diarios y los niños de 3 años consumen 2 pañales diarios. \nSe desea conocer el consumo total de pañales diarios.");
         int nino1,nino2,nino3,total;
         Scanner entrada1=new Scanner(System.in);
         System.out.println("Determinar el consumo total de Pañales diarios");
@@ -387,6 +399,7 @@ public class TareaGestionCalidadvFinal {
     }
      public static void  Ejercicio27()
     {
+        System.out.println("Las elecciones presidenciales están próximas a realizarse en el país");        
         int personas,voto,part1=0,part2=0,part3=0,sivotan=0,novotan;
         String partfav="";
         double abstenciones,porcv1,porcv2,porcv3;
@@ -467,6 +480,7 @@ public class TareaGestionCalidadvFinal {
     }
               public static void  Ejercicio29()
     {
+        System.out.println("La presión, volumen y temperatura de una masa de aire se relacionan por la fórmula: \nMasa= presión * volumen/ 0.37*(temperatura+460) ");
         double presion,temp,vol,total;
         Scanner entrada1=new Scanner(System.in);
         System.out.println("Determinar la masa total");
@@ -481,6 +495,7 @@ public class TareaGestionCalidadvFinal {
     }
         public static void  Ejercicio31()
     {
+        System.out.println("Realice un programa que de cómo resultado la suma del cuadrado y el cubo de los N primeros números.");
         int valor,total=0;
         String resp="n";
         Scanner entrada1=new Scanner(System.in);        
@@ -496,6 +511,7 @@ public class TareaGestionCalidadvFinal {
         
         public static void  Ejercicio33()
     {
+        System.out.println("Algoritmo que muestre los 100 primeros términos de la serie de Fibonnacci (1, 2, 3, 5, 8, 13, 21…..) ");
         int valor1=1,valor2=1,valor3,total,nnn,contador=0;
         String suce="(1,1",su2;
         System.out.println("Ingrese el numero de terminos que quiere mostrar en sucecion fibonacci");
@@ -514,6 +530,7 @@ public class TareaGestionCalidadvFinal {
     }
          public static void Ejercicio35()
     {
+        System.out.println("Diseñar a un programa que ingrese un valor positivo, \ncomo proceso determine si el último digito del valor ingresado es o no un número primo.  ");
         String digito1,digito2,digito3;
          Scanner entrada=new Scanner(System.in);
         System.out.println("Ingrese un numero");
@@ -544,6 +561,7 @@ public class TareaGestionCalidadvFinal {
          
         public static void  Ejercicio37()
     {
+        System.out.println("Realizar un programa que permita pedir N números naturales POSITIVOS,  \ndetermine y muestre cuantos números ingresados son “números perfectos”.");
         List<Integer> listaingresada = new ArrayList<Integer>();
          List<Integer> listaperfectos = new ArrayList<Integer>();
         int valor,total=0,contador=0,suma = 0;
@@ -583,6 +601,7 @@ public class TareaGestionCalidadvFinal {
     }
         public static void  Ejercicio39()
     {
+        System.out.println("Se reciben tres enteros positivos en forma ascendente a _ b _ c.");
         int valora,valorb,valorc,total=0;
         double resul;
         int area,s;
