@@ -659,7 +659,31 @@ public class TareaGestionCalidadvFinal {
             return false;
         }
     }
-    
+    public static void decimoSeptimo(){
+        Scanner ingreso = new Scanner(System.in);
+        int numero=0, contador=0,bandera=0, total=1;
+        System.out.println("Ingrese su valor");
+        numero = ingreso.nextInt();
+        if (numero==0) {
+            total =1;
+            System.out.println(total);
+        }else{
+            if (numero>0) {
+                while(bandera==0){
+                    contador++;
+                    total = total*contador;
+                    if (contador==numero) {
+                        bandera=1;
+                    }            
+                }
+                System.out.println(total);
+            }else{
+                if (numero<0) {
+                    System.out.println("Error en procesar la información");
+                }
+            }
+        }
+    }
         
       
 }
