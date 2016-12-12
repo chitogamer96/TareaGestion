@@ -52,10 +52,12 @@ public class TareaGestionCalidadvFinal {
           Ejercicio13();
        break;
            case 15:
+          Ejercicio15();     
        break;
            case 17:
        break;
            case 19:
+           Ejercicio19();
        break;
            case 21:
            Ejercicio21();
@@ -264,6 +266,48 @@ public class TareaGestionCalidadvFinal {
         }
         //total=(int)Math.pow(base,potencia);
         System.out.println(" 99EL total de "+base+" elevado a la "+potencia+" es = "+total);
+        
+          
+    }
+             public static void Ejercicio15()
+    {
+       int valora,valorb,total=0;
+       Scanner entr=new Scanner(System.in);
+        System.out.println("Calcular m*n");
+        System.out.println("Ingrese el valor de m");
+        valora=entr.nextInt();
+        System.out.println("Ingrese el valor de n");        
+        valorb=entr.nextInt();
+        for (int i = 0; i < valorb; i++) {
+            total+=valora;
+        }
+        //total=(int)Math.pow(base,potencia);
+        System.out.println(" EL total de "+valora+" multiplicado por "+valorb+" es = "+total);
+        
+          
+    }
+    public static void Ejercicio19()
+    {
+       int numero,exp,digito,bin;
+       double binario;
+       Scanner entr=new Scanner(System.in);
+        System.out.println("Calcular el binario de un numero");
+        do
+        {            
+        System.out.println("Ingrese el valor (NO MAYOR A 256)");
+        numero=entr.nextInt();
+        }while(numero>256||numero<0);
+         exp=0;
+        binario=0;
+        while(numero!=0){
+                digito = numero % 2;            
+                binario = binario + digito * Math.pow(10, exp);   
+                exp++;
+                numero = numero/2;
+        }
+        bin=(int) Math.floor(binario);
+       // System.out.printf("Binario: %.0f %n", binario);
+        System.out.println(" EL Binario de "+numero+" es "+bin);
         
           
     }
